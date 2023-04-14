@@ -59,6 +59,12 @@
       "name": "Onion Rings",
       "image": "./assets/food/onion-rings.jpeg",
       "description": "The Flatburger exclusive Onion Rings! Get them while supplies last!"
+    },
+    {
+      "name": "Flatburger 2.0",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/Hamburger_%28black_bg%29.jpg/640px-Hamburger_%28black_bg%29.jpg",
+      "description": "Even better than the original! It's way too good to be true!",
+      "id": 11
     }
   ]
 }

@@ -32,3 +32,41 @@ function displayFoodDetails(food){
     const foodDescription = document.querySelector('#description-display')
     foodDescription.textContent = food.description
 }
+
+const newFoodForm = document.getElementById('new-food')
+newFoodForm.addEventListener('submit', (event) => {
+    event.preventDefault()
+
+    const foodNameValue = document.getElementById('new-name').value
+    const foodImageValue = document.getElementById('new-image').value
+    const foodDescriptionValue = document.getElementById('new-description').value
+
+    const newFood = {
+        name: foodNameValue,
+        image: foodImageValue,
+        description: foodDescriptionValue
+    }
+    
+    // Optimistic Rendering: Frontend updates happen before the data is sent to the backend
+    // addFoodImageToMenu(newFood)
+
+    // POST
+    fetch("http://localhost:3000/foods", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(newFood)
+    })
+    .then(response => {
+        if(response.ok){
+            // Pessimistic Rendering: Data is sent to the backend first, and we wait for the response to be successful before updating the frontend
+            response.json().then(newFoodData => addFoodImageToMenu(newFoodData))
+        }
+        else{
+            alert(`Error: ${response.status} ${response.statusText}`)
+        }
+    })
+
+    newFoodForm.reset()
+})
