@@ -60,8 +60,8 @@ newFoodForm.addEventListener('submit', (event) => {
         body: JSON.stringify(newFood)
     })
     .then(response => {
+        // Pessimistic Rendering: Data is sent to the backend first, and we only update the frontend if the response is successful (if the value of "response.ok" is "True")
         if(response.ok){
-            // Pessimistic Rendering: Data is sent to the backend first, and we wait for the response to be successful before updating the frontend
             response.json().then(newFoodData => {
                 addFoodImageToMenu(newFoodData)
             })
