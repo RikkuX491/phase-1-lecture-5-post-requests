@@ -32,3 +32,36 @@ function displayFoodDetails(food){
     const foodDescription = document.querySelector('#description-display')
     foodDescription.textContent = food.description
 }
+
+const newFoodForm = document.getElementById('new-food')
+newFoodForm.addEventListener('submit', (event) => {
+    event.preventDefault()
+    
+    const newNameInputElement = document.getElementById('new-name')
+    const newImageInputElement = document.getElementById('new-image')
+    const newDescriptionInputElement = document.getElementById('new-description')
+
+    const newFood = {
+        name: newNameInputElement.value,
+        image: newImageInputElement.value,
+        description: newDescriptionInputElement.value
+    }
+
+    // addFoodImageToMenu(newFood)
+
+    fetch('http://localhost:3000/foods', {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+            "Accept": "application/json"
+        },
+        body: JSON.stringify(newFood)
+    })
+    .then(response => {
+        if(response.ok){
+            response.json().then(newFoodData => {
+                addFoodImageToMenu(newFoodData)
+            })
+        }
+    })
+})

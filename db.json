@@ -59,6 +59,24 @@
       "name": "Onion Rings",
       "image": "./assets/food/onion-rings.jpeg",
       "description": "The Flatburger exclusive Onion Rings! Get them while supplies last!"
+    },
+    {
+      "name": "Flatburger 2.0",
+      "image": "https://cdn.vox-cdn.com/thumbor/mejnnxgNVjXskwVaXVUEMQDpb0w=/0x575:8034x4781/fit-in/1200x630/cdn.vox-cdn.com/uploads/chorus_asset/file/24163665/Gus_s_Chop_House_Burger_at_Bar.jpg",
+      "description": "Too good to be true",
+      "id": 11
+    },
+    {
+      "name": "Pizzas 'R' US",
+      "image": "https://www.biggerbolderbaking.com/wp-content/uploads/2021/02/New-York-Style-Pizza-Thumbnail1-scaled.jpg",
+      "description": "Pizzas are too yummm!",
+      "id": 12
+    },
+    {
+      "name": "Quesadilla",
+      "image": "https://recipetineats.com/wp-content/uploads/2018/06/Quesadillas_4.jpg",
+      "description": "Yum yum cheesy goodness!",
+      "id": 13
     }
   ]
 }
